@@ -21,6 +21,17 @@ def get_dog_image_url():
     data = res.json()
     return data['url']
 
+def ra_em():
+    emoji = ["😀", "😋", "😭", "🎈", "✨", "🎮", "👻", "🐱‍👤"]
+    return random.choice(emoji)
+
+def flip_coin():
+    flip = random.randint(1, 2)
+    if flip == 1:
+        return "YAZI"
+    else:
+        return "TURA"
+
 @bot.event
 async def on_ready():
     print(f'{bot.user} olarak giriş yaptık')
@@ -32,6 +43,14 @@ async def hello(ctx):
 @bot.command()
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
+
+@bot.command()
+async def emoji(ctx):
+    await ctx.send(ra_em())
+
+@bot.command()
+async def coin(ctx):
+    await ctx.send(flip_coin())
 
 @bot.command()
 async def mem(ctx):

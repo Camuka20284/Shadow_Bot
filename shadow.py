@@ -31,6 +31,10 @@ def flip_coin():
         return "YAZI"
     else:
         return "TURA"
+    
+def ra_sa():
+    a = random.randint(0, 10)
+    return a
 
 @bot.event
 async def on_ready():
@@ -39,6 +43,14 @@ async def on_ready():
 @bot.command()
 async def hello(ctx):
     await ctx.send(f'Merhaba, benim adım {bot.user}! Ben bir botum!')
+
+@bot.command()
+async def shadow(ctx):
+    await ctx.send(f"Komutlar: !hello !shadow !sayı !heh !emoji !coin !mem !duck !dog")
+
+@bot.command()
+async def sayı(ctx):
+    await ctx.send(ra_sa())
 
 @bot.command()
 async def heh(ctx, count_heh = 5):

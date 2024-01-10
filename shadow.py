@@ -100,4 +100,4 @@ async def dog(ctx):
     image_url = get_dog_image_url()
     await ctx.send(image_url)
 
-bot.run("MTE4NzQ1NjAzODMwNDIzNTYwMA.GrnY0v.Zl5Fj7gTb7Hqg5YPQUGBEE6rdVn9IPlFFsChto")
+bot.run("TOKEN")

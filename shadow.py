@@ -55,7 +55,7 @@ async def hello(ctx):
 
 @bot.command()
 async def yardım(ctx):
-    await ctx.send(f"Komutlar: !hello !yardım !sayı !işaret !heh !emoji !renk !para !mem !duck !dog")
+    await ctx.send(f"Komutlar: !hello !yardım !sayı !işaret !heh !topla !çıkar !çarp !böl !emoji !renk !para !mem !duck !dog")
 
 @bot.command()
 async def sayı(ctx):
@@ -68,6 +68,22 @@ async def işaret(ctx):
 @bot.command()
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
+
+@bot.command()
+async def topla(ctx, toplanan_1 = 5, toplanan_2 = 5):
+    await ctx.send(toplanan_1 + toplanan_2)
+
+@bot.command()
+async def çıkar(ctx, eksilen = 5, çıkan = 5):
+    await ctx.send(eksilen - çıkan)
+
+@bot.command()
+async def çarp(ctx, çarpan_1 = 5, çarpan_2 = 5):
+    await ctx.send(çarpan_1 * çarpan_2)
+
+@bot.command()
+async def böl(ctx, bölünen = 5, bölen = 5):
+    await ctx.send(bölünen // bölen)
 
 @bot.command()
 async def emoji(ctx):

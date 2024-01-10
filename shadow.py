@@ -25,6 +25,10 @@ def ra_em():
     emoji = ["😀", "😋", "😭", "🎈", "✨", "🎮", "👻", "🐱‍👤"]
     return random.choice(emoji)
 
+def ra_is():
+    sekil = ["('‿')", "(★‿★)", "♪(´▽｀)", "(ツ)", "(⓿_⓿)", "(＞︿＜)"]
+    return random.choice(sekil)
+
 def flip_coin():
     flip = random.randint(1, 2)
     if flip == 1:
@@ -33,8 +37,13 @@ def flip_coin():
         return "TURA"
     
 def ra_sa():
-    a = random.randint(0, 10)
+    a = random.randint(0,100000)
     return a
+
+def ra_re():
+    renk = ["🔴","🟠","🟡","🟢","🔵","🟣","⚫"]
+    return random.choice(renk)
+
 
 @bot.event
 async def on_ready():
@@ -45,12 +54,16 @@ async def hello(ctx):
     await ctx.send(f'Merhaba, benim adım {bot.user}! Ben bir botum!')
 
 @bot.command()
-async def shadow(ctx):
-    await ctx.send(f"Komutlar: !hello !shadow !sayı !heh !emoji !coin !mem !duck !dog")
+async def yardım(ctx):
+    await ctx.send(f"Komutlar: !hello !yardım !sayı !işaret !heh !emoji !renk !para !mem !duck !dog")
 
 @bot.command()
 async def sayı(ctx):
     await ctx.send(ra_sa())
+
+@bot.command()
+async def işaret(ctx):
+    await ctx.send(ra_is())
 
 @bot.command()
 async def heh(ctx, count_heh = 5):
@@ -61,7 +74,11 @@ async def emoji(ctx):
     await ctx.send(ra_em())
 
 @bot.command()
-async def coin(ctx):
+async def renk(ctx):
+    await ctx.send(ra_re())
+
+@bot.command()
+async def para(ctx):
     await ctx.send(flip_coin())
 
 @bot.command()
@@ -83,4 +100,4 @@ async def dog(ctx):
     image_url = get_dog_image_url()
     await ctx.send(image_url)
 
-bot.run("TOKEN")
+bot.run("MTE4NzQ1NjAzODMwNDIzNTYwMA.GrnY0v.Zl5Fj7gTb7Hqg5YPQUGBEE6rdVn9IPlFFsChto")
